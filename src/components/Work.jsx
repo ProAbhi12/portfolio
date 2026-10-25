@@ -50,7 +50,7 @@ const PROJECTS = [
     ),
   },
   {
-    name: "Income & Expense Tracker", kind: "Income / expense web app", year: "2025", acc: "amber",
+    name: "Income & Expense Tracker", kind: "Income / expense web app", year: "2024", acc: "amber",
     outcomes: [
       "Category-wise daily income and expense with running balances",
       "Downloadable summary reports for any period",
@@ -85,7 +85,7 @@ const PROJECTS = [
     ),
   },
   {
-    name: "Online Grocery Store", kind: "E-commerce with admin", year: "2025", acc: "rose",
+    name: "Online Grocery Store", kind: "E-commerce with admin", year: "2023", acc: "rose",
     outcomes: [
       "Customers browse and order; admins manage products, categories and stock",
       "Full CRUD operations on every catalogue entity",
