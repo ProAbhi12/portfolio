@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": { "*": ["./*"], "components/*": ["components/*"], "lib/*": ["lib/*"] }
+  },
+  "include": ["src/**/*", "components/**/*", "lib/**/*"]
+}
