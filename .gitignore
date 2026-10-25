@@ -3,3 +3,4 @@ dist/
 .taste-skill/
 old-site/
 *.log
+DEPLOY.md
