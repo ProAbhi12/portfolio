@@ -247,7 +247,7 @@ button { font-family: inherit; }
 .outcomes li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 6px; height: 6px; border-radius: 50%; background: var(--red); }
 .card p.desc { color: var(--muted); font-size: 0.95rem; margin-top: 0.9rem; }
 .tags { list-style: none; display: flex; flex-wrap: wrap; gap: 0.45rem; margin-top: 1.1rem; }
-.tags li, .pills li {
+.tags li, .pills li, .pill {
   font-size: 0.8125rem; font-weight: 500;
   color: var(--muted);
   border: 1px solid var(--line-soft);
@@ -399,13 +399,31 @@ button { font-family: inherit; }
 }
 
 /* ---------- stack ---------- */
-.stack-groups { margin-top: 2.5rem; display: grid; gap: 1.25rem; }
-.g-row { display: grid; grid-template-columns: 8.5rem 1fr; gap: 1.25rem; padding: 1.05rem 1.1rem; align-items: start; border-radius: 14px; border: 1px solid rgba(255,255,255,0.08); border-top-color: rgba(255,255,255,0.18); background: rgba(20,20,23,0.6); transition: background 0.25s; }
-.g-row:hover { background: rgba(30,30,36,0.75); }
-.g-row dt { color: var(--ink); font-size: 0.9rem; font-weight: 600; padding-top: 0.2rem; }
-.pills li { transition: border-color 0.2s, color 0.2s, background 0.2s; }
-.pills li:hover { color: var(--ink); border-color: rgba(255,255,255,0.2); background: rgba(255,255,255,0.07); }
-@media (max-width: 560px) { .g-row { grid-template-columns: 1fr; gap: 0.6rem; } }
+.skills-grid {
+  display: grid; grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+  margin-top: 2.5rem;
+  align-items: start;
+}
+.skill-card {
+  border-radius: 12px;
+  padding: 1.35rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-top-color: rgba(255, 255, 255, 0.18);
+  background: rgba(24, 24, 27, 0.6);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  transition: background 0.25s, border-color 0.25s, transform 0.45s var(--ease);
+}
+.skill-card:hover {
+  background: rgba(30, 30, 34, 0.72);
+  border-top-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px);
+}
+.skill-card h3 { font-size: 1.0625rem; font-weight: 600; color: #f4f4f5; letter-spacing: -0.01em; margin-bottom: 0.9rem; }
+.pill-basic { color: var(--faint); border-style: dashed; }
+.pill-basic em { font-style: normal; font-size: 0.6875rem; opacity: 0.75; }
+@media (max-width: 960px) { .skills-grid { grid-template-columns: 1fr; } }
 
 /* back-to-top glass pill */
 .to-top {

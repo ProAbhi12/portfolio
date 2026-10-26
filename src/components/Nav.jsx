@@ -33,7 +33,7 @@ export default function Nav() {
         <div className="nav-links">
           <a href="#story">Story</a>
           <a href="#work">Work</a>
-          <a href="#stack">Stack</a>
+          <a href="#stack">Skills</a>
         </div>
         <a className="btn btn-small" href="mailto:shakyaabhisekh466@gmail.com?subject=Project%20enquiry%20for%20Abhisekh">Email me</a>
       </nav>

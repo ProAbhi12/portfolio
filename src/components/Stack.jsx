@@ -4,12 +4,47 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 gsap.registerPlugin(ScrollTrigger);
 
+/* items: string = proficient, [name, "basic"] = working knowledge (per CV) */
 const GROUPS = [
-  { label: "Frontend", items: ["React", "JavaScript", "Bootstrap", "Tailwind CSS", "AJAX"] },
-  { label: "Backend", items: ["Laravel", "PHP", ".NET", "ASP.NET"] },
-  { label: "Data", items: ["MySQL", "SQL Server", "SSMS"] },
-  { label: "Practice", items: ["REST APIs", "Unit testing", "Integration testing", "Git", "GitLab", "JavaFX"] },
+  {
+    label: "Languages",
+    items: ["HTML5", "CSS3", "JavaScript", "PHP", "SQL", "Java", ["TypeScript", "basic"], ["Python", "basic"]],
+  },
+  {
+    label: "Frontend",
+    items: ["React", "Bootstrap", "Tailwind CSS", "AJAX", "Responsive interfaces"],
+  },
+  {
+    label: "Backend & APIs",
+    items: ["Laravel", "Blade", ["ASP.NET", "basic"], [".NET", "basic"], "REST API development", "API integration"],
+  },
+  {
+    label: "Databases",
+    items: ["MySQL", "SQL Server", "SSMS", "Relational design", "CRUD operations", "Joins & query optimization"],
+  },
+  {
+    label: "Testing & Quality",
+    items: ["Unit testing", "Integration testing", "Debugging", "Input validation", "Error handling"],
+  },
+  {
+    label: "Tools & Platforms",
+    items: ["Git", "GitLab", "XAMPP", "Apache", ["JavaFX", "basic"], "Microsoft Excel", "Microsoft Word", "Microsoft Outlook", "Tigg"],
+  },
+  {
+    label: "Professional",
+    items: ["Problem solving", "Teamwork", "Time management", "Adaptability", "Technical documentation", "Continuous learning"],
+  },
 ];
+
+function Pill({ item }) {
+  const [name, level] = Array.isArray(item) ? item : [item, null];
+  return (
+    <li className={"pill" + (level === "basic" ? " pill-basic" : "")}>
+      {name}
+      {level === "basic" && <em> basic</em>}
+    </li>
+  );
+}
 
 export default function Stack() {
   const root = useRef(null);
@@ -29,16 +64,15 @@ export default function Stack() {
   return (
     <section className="section" id="stack" ref={root}>
       <div className="shell">
-        <h2 className="sec-h" data-reveal>What I build with</h2>
-        <div className="stack-groups">
+        <h2 className="sec-h" data-reveal>Skills</h2>
+        <p className="sec-sub" data-reveal>Everything I work with, grouped by what it does. Items marked basic are working knowledge I am actively strengthening.</p>
+        <div className="skills-grid">
           {GROUPS.map((g) => (
-            <div className="g-row" key={g.label} data-reveal>
-              <dt>{g.label}</dt>
-              <dd>
-                <ul className="pills">
-                  {g.items.map((t) => <li key={t}>{t}</li>)}
-                </ul>
-              </dd>
+            <div className="skill-card" key={g.label} data-reveal>
+              <h3>{g.label}</h3>
+              <ul className="pills">
+                {g.items.map((item) => <Pill key={Array.isArray(item) ? item[0] : item} item={item} />)}
+              </ul>
             </div>
           ))}
         </div>
