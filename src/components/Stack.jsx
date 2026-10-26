@@ -28,7 +28,7 @@ const GROUPS = [
   },
   {
     label: "Tools & Platforms",
-    items: ["Git", "GitLab", "AI tools for daily development", "XAMPP", "Apache", ["JavaFX", "basic"], "Microsoft Excel", "Microsoft Word", "Microsoft Outlook", "Tigg"],
+    items: ["Git", "GitLab", "AI Tools", "XAMPP", "Apache", ["JavaFX", "basic"], "Microsoft Excel", "Microsoft Word", "Microsoft Outlook", "Tigg"],
   },
   {
     label: "Professional",
