@@ -8,7 +8,7 @@ gsap.registerPlugin(ScrollTrigger);
 const GROUPS = [
   {
     label: "Languages",
-    items: ["HTML5", "CSS3", "JavaScript", "PHP", "SQL", "Java", ["TypeScript", "basic"], ["Python", "basic"]],
+    items: ["HTML5", "CSS3", "JavaScript", "PHP", "SQL", "Java", "TypeScript", ["Python", "basic"]],
   },
   {
     label: "Frontend",
@@ -28,7 +28,7 @@ const GROUPS = [
   },
   {
     label: "Tools & Platforms",
-    items: ["Git", "GitLab", "XAMPP", "Apache", ["JavaFX", "basic"], "Microsoft Excel", "Microsoft Word", "Microsoft Outlook", "Tigg"],
+    items: ["Git", "GitLab", "AI tools for daily development", "XAMPP", "Apache", ["JavaFX", "basic"], "Microsoft Excel", "Microsoft Word", "Microsoft Outlook", "Tigg"],
   },
   {
     label: "Professional",
